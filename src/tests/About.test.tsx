@@ -2,7 +2,7 @@ import { About } from '../pages';
 import renderWithRouter from '../renderWithRouter';
 
 describe('Teste o componente About', () => {
-  it('Teste se a página contém as informações sobre a Pokédex.', () => {
+  it('Teste se a página contém as informações sobre a Pokédex', () => {
     const screen = renderWithRouter(<About />, { route: '/about' });
 
     const firstParagraph = screen.getByText(/This application simulates a Pokédex, a digital encyclopedia containing all Pokémon/i);
