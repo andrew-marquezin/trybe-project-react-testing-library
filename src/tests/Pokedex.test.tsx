@@ -26,6 +26,7 @@ describe('Teste o componente Pokédex', () => {
       expect(nextImg).toHaveAttribute('src', pokemonList[index + 1].image);
     }
   });
+
   it('Teste se os Pokémon são mostrados, somente um por vez', () => {
     const screen = renderWithRouter(<App />, { route: '/' });
 
@@ -33,6 +34,7 @@ describe('Teste o componente Pokédex', () => {
 
     expect(pokeImg).toHaveLength(1);
   });
+
   it('Teste se é mostrado o primeiro pokemon ao clicar no ultimo pokemon da lista', async () => {
     const screen = renderWithRouter(<App />, { route: '/' });
     const { user } = screen;
@@ -54,6 +56,7 @@ describe('Teste o componente Pokédex', () => {
 
     expect(screen.getByText('Pikachu')).toBeInTheDocument();
   });
+
   it('Deve existir um botão de filtragem para cada tipo de Pokémon, sem repetição', async () => {
     const screen = renderWithRouter(<App />, { route: '/' });
     const { user } = screen;
@@ -68,6 +71,7 @@ describe('Teste o componente Pokédex', () => {
     await user.click(filterBtns[6]);
     expect(screen.getByText('Dragonair')).toBeInTheDocument();
   });
+
   it('Teste se a Pokédex contém um botão para resetar o filtro', async () => {
     const screen = renderWithRouter(<App />, { route: '/' });
     const { user } = screen;

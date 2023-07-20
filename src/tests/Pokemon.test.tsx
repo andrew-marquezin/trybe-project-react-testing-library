@@ -1,4 +1,3 @@
-import { getByRole } from '@testing-library/react';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 import pokemonList from '../data';
@@ -39,6 +38,7 @@ describe('Teste o componente Pokémon', () => {
     await user.click(screen.getByRole('checkbox', { name: /pokémon favoritado\?/i }));
 
     const starImg = screen.getByAltText(/([a-z]*\s)*is marked as favorite/i);
+    expect(starImg).toBeInTheDocument();
     expect(starImg).toHaveAttribute('src', '/star-icon.svg');
   });
 });
